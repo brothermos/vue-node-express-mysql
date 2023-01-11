@@ -106,7 +106,7 @@ export default {
         async getUserById() {
             try {
                 const response = await axios.get(
-                    `http://localhost:5000/users/${this.$route.params.id}`
+                    `https://vue-crud-mysql.herokuapp.com/users/${this.$route.params.id}`
                 );
                 this.user = response.data;
                 console.log("id", this.$route.params.id);
@@ -137,7 +137,7 @@ export default {
                         try {
                             // ยิง axios
                             await axios.put(
-                                `http://localhost:5000/users/${this.$route.params.id}`,
+                                `https://vue-crud-mysql.herokuapp.com/users/${this.$route.params.id}`,
                                 this.user
                             );
 

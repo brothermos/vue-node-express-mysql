@@ -115,7 +115,7 @@ export default {
         //get all user
         async getUser() {
             try {
-                const response = await axios.get("http://localhost:5000/users");
+                const response = await axios.get("https://vue-crud-mysql.herokuapp.com/users");
                 this.users = response.data;
                 console.log(this.users);
             } catch (error) {
@@ -139,7 +139,7 @@ export default {
                     if (result.isConfirmed) {
                         try {
                             // ยิง axios
-                            await axios.delete(`http://localhost:5000/users/${id}`);
+                            await axios.delete(`https://vue-crud-mysql.herokuapp.com/users/${id}`);
                             this.getUser();
                             this.$swal.fire("Deleted!", "User has been deleted.", "success");
                         } catch (error) {

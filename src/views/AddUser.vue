@@ -118,7 +118,7 @@ export default {
             // console.log("this.user.name", this.user.name);
             // console.log("formData", formData);
             try {
-                await axios.post("http://localhost:5000/users", this.user);
+                await axios.post("https://vue-crud-mysql.herokuapp.com/users", this.user);
                 // this.$swal('Created user successfully');
                 this.$swal.fire({
                     position: "top-center",

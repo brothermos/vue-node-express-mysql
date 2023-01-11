@@ -43,6 +43,18 @@
                         </div>
                     </div>
                 </div>
+                <div class="col-sm-12">
+                    <div class="card text-white new-button mb-3">
+                        <h2 class="card-header text-center">DATABASE</h2>
+                        <div class="card-body">
+                            <h5 class="card-title">- ใช้ MySQL database หลัก</h5>
+                            <h5 class="card-title">- ใช้ JawsDB ในการเก็บ database ไว้บน cloud</h5>
+                            <h5 class="card-title">- ใช้ DBeaver ในการจัดการฐานข้อมูล</h5>
+                            <h5 class="card-title">- Deploy server ขึ้น Heroku</h5>
+                            <h5 class="card-title">- Deploy client ขึ้น Vercel</h5>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

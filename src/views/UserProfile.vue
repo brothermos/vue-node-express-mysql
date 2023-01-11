@@ -24,7 +24,6 @@
                                             type="text"
                                             class="form-control"
                                             placeholder="Search Name"
-                                            
                                         />
                                     </div>
                                     <div class="col">
@@ -125,14 +124,29 @@ export default {
         },
         // delete
         async deleteUser(id) {
-            try {
-                if (window.confirm("Are you sure you want to delete this post?")) {
-                    await axios.delete(`http://localhost:5000/users/${id}`);
-                    this.getUser();
-                }
-            } catch (error) {
-                console.log(error);
-            }
+            // ใช้ Sweet alert 2
+            this.$swal
+                .fire({
+                    title: "Are you sure you want to delete this?",
+                    text: "You won't be able to revert this!",
+                    icon: "warning",
+                    showCancelButton: true,
+                    confirmButtonColor: "#01308b",
+                    cancelButtonColor: "#d33",
+                    confirmButtonText: "Yes, delete it!",
+                })
+                .then(async (result) => {
+                    if (result.isConfirmed) {
+                        try {
+                            // ยิง axios
+                            await axios.delete(`http://localhost:5000/users/${id}`);
+                            this.getUser();
+                            this.$swal.fire("Deleted!", "User has been deleted.", "success");
+                        } catch (error) {
+                            console.log(error);
+                        }
+                    }
+                });
         },
     },
 };

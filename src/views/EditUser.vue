@@ -123,12 +123,41 @@ export default {
             // formData.append("phone", this.user.phone);
             // formData.append("company", this.user.company);
             // formData.append("title", this.user.title);
-            try {
-                await axios.put(`http://localhost:5000/users/${this.$route.params.id}`, this.user);
-                this.$router.push("/");
-            } catch (error) {
-                console.log(error);
-            }
+            this.$swal
+                .fire({
+                    title: "You wanna update it?",
+                    icon: "warning",
+                    showCancelButton: true,
+                    confirmButtonColor: "#01308b",
+                    cancelButtonColor: "#d33",
+                    confirmButtonText: "Yes!",
+                })
+                .then(async (result) => {
+                    if (result.isConfirmed) {
+                        try {
+                            // ยิง axios
+                            await axios.put(
+                                `http://localhost:5000/users/${this.$route.params.id}`,
+                                this.user
+                            );
+
+                            this.$swal.fire(
+                                `User ${this.user.name} has been updated.`,
+                                "",
+                                "success"
+                            );
+                            this.$router.push("/");
+                        } catch (error) {
+                            console.log(error);
+                        }
+                    }
+                });
+            // try {
+            //     await axios.put(`http://localhost:5000/users/${this.$route.params.id}`, this.user);
+            //     this.$router.push("/");
+            // } catch (error) {
+            //     console.log(error);
+            // }
         },
     },
 };

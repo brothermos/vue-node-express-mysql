@@ -18,14 +18,14 @@
         <!-- ข้อมูล -->
         <div class="container mt-3">
             <div class="row align-items-center">
-                <div class="col-md-4">
+                <div class="col-md-6">
                     <img
                         :src="user.photo"
                         alt=""
                         class="user-edit-img"
                     />
                 </div>
-                <div class="col-md-5">
+                <div class="col-md-6">
                     <ul class="list-group">
                         <li class="list-group-item">
                             Name : <span class="fw-bold">{{ user.name }}</span>
@@ -45,7 +45,6 @@
                     </ul>
                 </div>
             </div>
-
             <div class="row mt-5">
                 <div class="col">
                     <router-link to="/" class="btn new-button"

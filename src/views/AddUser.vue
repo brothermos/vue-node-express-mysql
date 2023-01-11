@@ -119,6 +119,14 @@ export default {
             // console.log("formData", formData);
             try {
                 await axios.post("http://localhost:5000/users", this.user);
+                // this.$swal('Created user successfully');
+                this.$swal.fire({
+                    position: "top-center",
+                    icon: "success",
+                    title: "Create new user successfully",
+                    showConfirmButton: false,
+                    timer: 3000,
+                });
                 this.$router.push("/");
             } catch (error) {
                 console.log(error);

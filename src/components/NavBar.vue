@@ -2,6 +2,7 @@
    <nav class="navbar navbar-dark navbar-expand-sm navbar-css">
       <div class="container">
          <router-link to="/" class="navbar-brand">Vue Crud Test</router-link>
+         <router-link to="/about" class="navbar-brand">About</router-link>
       </div>
    </nav>
 </template>

@@ -7,21 +7,36 @@ body {
 
 .user-img {
    width: 150px;
+   height: 150px;
    border-radius: 50%;
    /* padding: 10px; */
+   object-fit: cover;
 }
 
 .user-img-big {
    width: 300px;
    border-radius: 50%;
 }
-.user-edit-img{
-   width: 250px;
+
+.user-edit-img {
+   width: 300px;
+   height: 300px;
+   border-radius: 10px;
+   object-fit: cover;
 }
+
 .color-text {
    color: #01308b;
 }
+
 .new-button {
    background-color: #01308b;
    color: white;
 }
+
+.new-button:hover {
+   background-color: #01308b;
+   color: white;
+}
+
+.header-box{}
